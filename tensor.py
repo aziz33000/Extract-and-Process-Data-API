@@ -2,13 +2,21 @@
 from flask import Flask, render_template, jsonify, request
 
 
-import os
-import matplotlib.pyplot as plt
+import tensorflow as tf
 import numpy as np
+import pandas as pd
+from sklearn.preprocessing import MinMaxScaler
+import matplotlib.pyplot as plt
 
-#import tensorflow as tf
-#import tensorflow.contrib.eager as tfe
+import os
 
+import tensorflow.contrib.eager as tfe
+
+# Import data
+data = pd.read_csv('training_set.csv')
+
+# Drop date variable
+data = data.drop(['DATE'], 1)
 def trainModel(dict):
     #tf.enable_eager_execution()
 

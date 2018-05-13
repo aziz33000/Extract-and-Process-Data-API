@@ -35,6 +35,7 @@ def employeeAll():
 		dictFeatures[fid] = row
 	db.commit()
 	db.close()
+	#json =descion_tree(dictFeatures)
 	return jsonify({'result' : 'output'})
 
 @app.route('/employee/<int:Id>', methods=['GET'])
