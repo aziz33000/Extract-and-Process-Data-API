@@ -10,16 +10,16 @@ import matplotlib.pyplot as plt
 
 import os
 
-import tensorflow.contrib.eager as tfe
+#import tensorflow.contrib.eager as tfe
 
 # Import data
-data = pd.read_csv('training_set.csv')
+#data = pd.read_csv('training_set.csv')
 
 # Drop date variable
-data = data.drop(['DATE'], 1)
-def trainModel(dict):
+#data = data.drop(['DATE'], 1)
+#def trainModel(dict):
     #tf.enable_eager_execution()
 
     #print("TensorFlow version: {}".format(tf.VERSION))
     #print("Eager execution: {}".format(tf.executing_eagerly()))
-    print(dict)
+ #   print(dict)
