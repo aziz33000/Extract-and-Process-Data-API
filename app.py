@@ -1,5 +1,5 @@
 from flask import Flask, render_template, jsonify, request
-import mysql.connector
+import MySQLdb
 import tensor
 
 
@@ -38,6 +38,11 @@ def employeeAll():
 	#json =descion_tree(dictFeatures)
 	return jsonify({'result' : 'output'})
 
+@app.route('/rule1', methods=['GET'])
+@app.route('/rule2', methods=['GET'])
+@app.route('/rule3', methods=['GET'])
+@app.route('/rule4', methods=['GET'])
+
 @app.route('/employee/<int:Id>', methods=['GET'])
 def employeeOne(Id):
 	return jsonify({'languages': str(Id) })
@@ -58,7 +63,7 @@ def createModelTensorflow():
 	cursor.close()
 	db.close()
 	tensor.trainModel(dictFeatures)
-	return ({'jsonKey':'json'})
+	return jsonify({'resultat':'training done'})
 	
 #PUT / DELETE
 if __name__ == '__main__':
