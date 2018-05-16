@@ -183,7 +183,10 @@ def employeeAll():
 	cursor.execute(sql)
 	results = cursor.fetchall()
 	for row in results:
+		raw = {}
 		fid = int(row[0])
+		for i in criteres:
+			raw [str(i)] = row[criteres.index(str(i))]
 		dictFeatures[fid] = row
 	db.commit()
 	db.close()
